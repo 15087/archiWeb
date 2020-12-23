@@ -13,26 +13,29 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Article
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=8, max=255)
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
-     */
-    private $content;
-
-    /**
-     * @ORM\Column(type="string", length=255)
+     * @Assert\Url()
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Assert\Length(min=8)
+     */
+    private $content;
 
     public function getId(): ?int
     {
