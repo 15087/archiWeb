@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formArticle 'bootstrap_4_layout.html.twig'%}
+{% block title %}Création d'un article{% endblock %}
+
+{% block body %}
+        <h1> Création d'un article </h1>
+
+  {{ form_start(formArticle) }}
+
+  {{ form_row(formArticle.title, {'attr':{'placeholder': "Titre de l'article"}}) }}
+  {{ form_row(formArticle.content, {'attr':{'placeholder': "Contenu de l'article"}}) }}
+  {{ form_row(formArticle.image, {'attr':{'placeholder': "URL de l'article"}}) }}
+
+  {{ form_widget(formArticle) }}
+
+  <button type="submit" class="btn btn-success">
+    
+    {% if editMode %}
+      Modifier
+    {% else %}
+      Ajouter 
+    {% endif %}
+  </button>
+
+  <a href="{{ path('blog') }}" class="btn btn-primary">Annuler </a>
+
+  {{ form_end(formArticle) }}
+
+{% endblock %}
