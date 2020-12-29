@@ -14,6 +14,10 @@ use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use App\Form\ArticleType; 
 
+use App\Entity\Category;
+use App\Repository\CategoryRepository;
+use App\Form\CategoryType; 
+
 
 class BlogController extends AbstractController
 {
@@ -69,13 +73,11 @@ class BlogController extends AbstractController
 
     }
 
-    /**
+     /**
      * @Route("/blog/categories", name="categories")
      */
-    public function categories()
+    public function categories(CategoryRepository $repo)
     {
-        $repo = $this->getDoctrine()->getRepository(Category::class);
-
         $categories = $repo->findAll();
 
         return $this->render('blog/categories.html.twig', [
@@ -84,6 +86,48 @@ class BlogController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/blog/categories/{id}", name="category_show")
+     */
+    public function show_category($id)
+    {
+        $repo = $this->getDoctrine()->getRepository(Category::class);
+
+        $category = $repo->find($id);
+
+        return $this->render('blog/show_category.html.twig', [
+            'category' => $category
+        ]);
+    }
+
+    /**
+     * @Route("/blog/addCategory", name="addCategory")
+     * @Route("/blog/{id}/editCategory", name="editCategory")
+     */
+    public function formCategory(Category $category = null, Request $request, EntityManagerInterface  $manager)
+    {
+        if(!$category)
+        {
+            $category = new Category();
+
+        }
+
+        $form = $this->createForm(CategoryType::class, $category);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $manager->persist($category);
+            $manager->flush();           
+            return $this->redirectToRoute('categories', ['id' => $category->getId()]);
+        }
+
+        return $this->render('blog/formCategory.html.twig', [
+            'formCategory' => $form->createView(),
+            'editMode' => $category->getId() !== null
+        ]);
+    }
 
     /**
      * @Route("/blog/{id}", name="blog_show")

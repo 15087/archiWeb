@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <nom>
+        <h1>{{ category.title }}</h1>
+    </nom>
+    <section class="content">
+        {% for article in category.articles %}
+            <article>
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.content | raw }}</p>
+                <a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-primary">Voir l'annonce</a>
+            </article>
+        {% endfor %}
+        <p></p>
+        <a href="{{ path('categories') }}" class="btn btn-secondary">Précédent </a>
+    </section>
+{% endblock %}
