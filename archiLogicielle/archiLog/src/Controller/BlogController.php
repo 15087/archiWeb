@@ -69,6 +69,21 @@ class BlogController extends AbstractController
 
     }
 
+    /**
+     * @Route("/blog/categories", name="categories")
+     */
+    public function categories()
+    {
+        $repo = $this->getDoctrine()->getRepository(Category::class);
+
+        $categories = $repo->findAll();
+
+        return $this->render('blog/categories.html.twig', [
+            'controller_name' => 'BlogController',
+            'categories' => $categories
+        ]);
+    }
+
 
     /**
      * @Route("/blog/{id}", name="blog_show")
