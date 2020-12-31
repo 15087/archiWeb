@@ -156,6 +156,24 @@ class BlogController extends AbstractController
         }
     }
 
+    /**
+    * @Route("/blog/{id}/removeCategory", name="removeCategory")
+    */    
+    public function deleteCategory($id){
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $post = $em->getRepository(Category::class)->find($id);
+            $em->remove($post);
+            $em->flush();
+        
+            $this->addFlash('message', 'Catégorie supprimée');
+            return $this->redirectToRoute('categories');
+        } catch (Exception $e) {
+            $this->addFlash('message', "La catégorie n'a pas pu être supprimée");
+        }
+    }
+
+
 
      
 }

@@ -13,6 +13,8 @@
             </article>
         {% endfor %}
         <p></p>
+        <a href="{{ path('editCategory', {'id': category.id }) }}" class="btn btn-success">Modifier </a>
+        <a href="{{ path('removeCategory', {'id': category.id }) }}" class="btn btn-danger">Supprimer </a>
         <a href="{{ path('categories') }}" class="btn btn-secondary">Précédent </a>
     </section>
 {% endblock %}
