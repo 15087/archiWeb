@@ -139,6 +139,23 @@ class BlogController extends AbstractController
             'article'=> $article]);
     }
 
+    /**
+    * @Route("/blog/{id}/removeArticle", name="removeArticle")
+    */    
+    public function deleteArticle($id){
+        try{
+            $em = $this->getDoctrine()->getManager();
+            $post = $em->getRepository(Article::class)->find($id);
+            $em->remove($post);
+            $em->flush();
+        
+            $this->addFlash('message', 'Annonce supprimée');
+            return $this->redirectToRoute('blog');
+        } catch (Exception $e) {
+            $this->addFlash('message', "L'annonce n'a pas pu être supprimée");
+        }
+    }
+
 
      
 }

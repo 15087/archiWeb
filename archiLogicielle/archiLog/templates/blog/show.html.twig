@@ -10,5 +10,6 @@
         </div>
     </article>
     <a href="{{ path('editArticle', {'id': article.id }) }}" class="btn btn-success">Modifier </a>
+    <a href="{{ path('removeArticle', {'id': article.id }) }}" class="btn btn-primary">Supprimer </a>
     <a href="{{ path('blog') }}" class="btn btn-primary">Précédent </a>
 {% endblock %}
