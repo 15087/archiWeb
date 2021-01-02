@@ -21,13 +21,14 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min=8, max=255)
+     * @Assert\Length(min=4, max=255)
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Url()
+     * @Assert\NotBlank()
      */
     private $image;
 
