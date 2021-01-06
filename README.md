@@ -2,10 +2,17 @@
 Plateforme permettant de lister les différents commerçants découverts en fonction de la catégorie des produits/services qu'ils proposent!
 
 
+## Installation 
 
-## Models
+## Folders
+- [Controller](/Controller)
+Different function controlling the entire system.
 
-## Licence
+- [Entity](/Entity)
+
+Defines different object models used in this project.
+
+## License
 
 ## Links 
 
