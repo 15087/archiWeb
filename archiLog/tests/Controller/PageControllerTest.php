@@ -19,6 +19,7 @@ class PageControllerTest extends WebTestCase
         $this->assertSelectorTextContains('h1', 'Bienvenue !');
     }
 
+    /*
     public function testCreateArticlePage(){
         $client = static::createClient();
         $crawler = $client->request('GET', '/blog/addArticle'); //request : crawler qui permet de récupérer et analyser des éléments de la page
@@ -29,6 +30,6 @@ class PageControllerTest extends WebTestCase
         ]);
         $client->submit($form);
         //$this->assertResponseRedirection('/blog/{id}');
-    }
+    } */
 
 }

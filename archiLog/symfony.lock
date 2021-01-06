@@ -114,6 +114,9 @@
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
+    "nyholm/symfony-bundle-test": {
+        "version": "1.7.0"
+    },
     "ocramius/proxy-manager": {
         "version": "2.2.3"
     },
