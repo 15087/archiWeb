@@ -5,7 +5,7 @@ Plateforme permettant de lister les différents commerçants découverts en fonc
 ## Installation 
 
 ## Folders
-- [Controller](/archiLogicielle/archiLog/Controller)
+- [Controller](archiLogicielle/archiLog/src/Controller)
 Different function controlling the entire system.
 
 - [Entity](/archiLog/Entity)
