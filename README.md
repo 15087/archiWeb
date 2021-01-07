@@ -11,7 +11,7 @@ Different function controlling the entire system.
 - [Entity](https://github.com/15087/archiWeb/tree/main/archiLog/src/Entity)
 Defines different object models used in this project.
 
-- [DataFixtures] (https://github.com/15087/archiWeb/tree/main/archiLog/src/DataFixtures)
+- [DataFixtures](https://github.com/15087/archiWeb/tree/main/archiLog/src/DataFixtures)
 Fixtures are used to load a “fake” set of data into a database that can then be used for testing or to help give you some interesting data.
 
 - [Form](https://github.com/15087/archiWeb/tree/main/archiLog/src/Form)
