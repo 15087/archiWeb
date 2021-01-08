@@ -16,7 +16,7 @@ And after that, you can run the website with the command:
 ```
 symfony server:start
 ```
-Open on localhost:8000 (http://localhost:8000/)
+[Open on localhost:8000](http://localhost:8000/)
 
 ## Folders
 - [Controller](https://github.com/15087/archiWeb/tree/main/archiLog/src/Controller)
@@ -49,6 +49,11 @@ The [blog folder](https://github.com/15087/archiWeb/tree/main/archiLog/templates
 
 ## License 
 [MIT License](https://github.com/15087/archiWeb/blob/main/LICENSE)
+
+## Upcoming features
+
+- Search articles by title
+- Add Authentication (Security component)
 
 ## Links 
 
