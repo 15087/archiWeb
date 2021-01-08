@@ -4,6 +4,20 @@ Platform allowing to list the different merchants discovered according to the ca
 
 ## Installation 
 
+Make sure you have [WampServer](https://www.wampserver.com/en/), [Composer](https://getcomposer.org/) and [Symfony](https://symfony.com/download) otherwise download them.
+Download the repo and start working. You should consider to use a virtual environnement, below you just have a to open a command prompt (cmd) in the repo's folder.
+```
+composer install
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:update --force
+php bin/console doctrine:fixtures:load
+```
+And after that, you can run the website with the command:
+```
+symfony server:start
+```
+Open on localhost:8000 (http://localhost:8000/)
+
 ## Folders
 - [Controller](https://github.com/15087/archiWeb/tree/main/archiLog/src/Controller)
 
