@@ -23,6 +23,7 @@ class ArticleFormTest extends PantherTestCase {
 
         ]);
         $client->submit($form);
+
     }
 
 }
