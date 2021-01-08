@@ -39,3 +39,5 @@ The [blog folder](https://github.com/15087/archiWeb/tree/main/archiLog/templates
 ## Links 
 
 [Based on the tutorial by Mr. Lior Chamla](https://www.youtube.com/watch?v=_GjHWa9hQic)
+[Symfony Documentation](https://symfony.com/doc/current/index.html)
+[Panther Library for the forms tests](https://github.com/symfony/panther)
