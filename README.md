@@ -5,7 +5,7 @@ Platform allowing to list the different merchants discovered according to the ca
 ## Installation 
 
 Make sure you have [WampServer](https://www.wampserver.com/en/), [Composer](https://getcomposer.org/) and [Symfony](https://symfony.com/download) otherwise download them.
-Download the repo and start working. You should consider to use a virtual environnement, below you just have a to open a command prompt (cmd) in the repo's folder.
+Download the repo and start working. You simply have to enter the following commands in the file in the folder of the repo:
 ```
 composer install
 php bin/console doctrine:database:create
@@ -60,3 +60,7 @@ The [blog folder](https://github.com/15087/archiWeb/tree/main/archiLog/templates
 [Based on the tutorial by Mr. Lior Chamla](https://www.youtube.com/watch?v=_GjHWa9hQic)
 [Symfony Documentation](https://symfony.com/doc/current/index.html)
 [Panther Library for the forms tests](https://github.com/symfony/panther)
+
+## Author
+
+Hanâ Jabbour

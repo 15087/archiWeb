@@ -21,6 +21,9 @@ use App\Form\CategoryType;
 
 class BlogController extends AbstractController
 {
+
+    //Montre la liste des articles
+
     /**
      * @Route("/blog", name="blog")
      */
@@ -33,7 +36,7 @@ class BlogController extends AbstractController
             'articles' => $articles
         ]);
     }
-
+    //Page d'accueil
     /**
      * @Route("/", name="home")
      */
@@ -61,7 +64,7 @@ class BlogController extends AbstractController
             
         if($form->isSubmitted() && $form->isValid())
         {
-            $manager->persist($article);
+            $manager->persist($article); //manager fait persister l'article avant de l'envoyer vers la db
             $manager->flush();
             return $this->redirectToRoute('blog_show', ['id' => $article->getId()]);
         }
@@ -72,6 +75,8 @@ class BlogController extends AbstractController
         ]);
 
     }
+
+    //Listes les catégories qd on clique sur le bouton "Catégories" de la navbar
 
      /**
      * @Route("/blog/categories", name="categories")
@@ -85,6 +90,8 @@ class BlogController extends AbstractController
             'categories' => $categories
         ]);
     }
+
+    //Permet de voir une catégorie en particulier (en fct de son id)
 
     /**
      * @Route("/blog/categories/{id}", name="category_show")
